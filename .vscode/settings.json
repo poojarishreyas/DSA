@@ -1,0 +1,14 @@
+{
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggestOnTriggerCharacters": false,
+
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+
+    "editor.inlayHints.enabled": "off",
+    "problems.decorations.enabled": false,
+    "editor.renderValidationDecorations": "off"
+}
