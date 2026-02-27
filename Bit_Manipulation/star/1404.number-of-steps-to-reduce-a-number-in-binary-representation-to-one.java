@@ -24,4 +24,11 @@ class Solution {
     }
 }
 // @lc code=end
+/*
+step1: travrse string from right to left till i>0 means no need to attend 1st elem
+step2: carry+bit decides odd or even 
+        if odd then carry will be 1 and step will be 2 as we are shifting
+        if even  step=step+1;
+        at final return steps+carry
+*/
 
