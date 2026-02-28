@@ -8,7 +8,6 @@
 class Solution {
     public int characterReplacement(String s, int k) {
         int i=0;
-        int count=0;
         int dominating_char=0;
         int[] freq=new int[26];
         int maxlength=0;
