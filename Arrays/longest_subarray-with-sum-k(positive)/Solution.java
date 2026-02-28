@@ -6,7 +6,7 @@ public class Solution {
         int sum = 0;
         int max = 0;
 
-        for (int j = 0; j < nums.length; j++) {
+        for (int j = 1; j < nums.length; j++) {
 
             sum += nums[j];
 
