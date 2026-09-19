@@ -12,17 +12,25 @@ class Solution {
         }
 
         int target = sum / 2;
-
-        boolean[] dp = new boolean[target + 1];
-        dp[0] = true;
-
-        for (int num : nums) {
-
-            for (int j = target; j >= num; j--) {
-                dp[j] = dp[j] || dp[j - num];
+        int n=nums.length;
+        boolean[] prev=new boolean [target+1];
+        boolean[] curr=new boolean[target+1];
+        prev[0]=true;
+        for(int i=n-1;i>=0;i--){
+            for(int j=0;j<=target;j++){
+                if(nums[i]>j){
+                    curr[j]=prev[j];
+                }
+                else{
+                    curr[j]=prev[j-nums[i]] || prev[j];
+                }
             }
-        }
+             boolean[] temp = prev;
+            prev = curr;
+            curr = temp;
 
-        return dp[target];
+        }
+        return curr[target];
+
     }
 }
