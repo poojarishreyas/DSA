@@ -6,7 +6,18 @@ class Solution {
         for (int[] row : dp) {
             Arrays.fill(row, -1);
         }
-        return helper(prices,0,2);
+        for(int i=prices.length-1;i>=0;i--){
+            for(int j=0;j<3;j++){
+                if(j==2){
+                    dp[i][j]=Math.max(dp[i+1][j-1]-prices[i],dp[i+1][j]);
+                }
+                if(j==1){
+                    dp[i][j]=Math.max(dp[i+1][j-1]+prices[i],dp[i+1][j]);
+
+                }
+            }
+        }
+        return dp[0][2]+1;
     }
     int helper(int[] prices,int i,int k){
         if(i==prices.length){
