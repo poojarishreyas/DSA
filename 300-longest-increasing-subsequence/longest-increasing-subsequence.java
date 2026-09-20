@@ -1,7 +1,7 @@
 class Solution {
     int[][] dp;
     public int lengthOfLIS(int[] nums) {
-        dp=new int[nums.length+1][nums.length+1];
+        dp=new int[nums.length][nums.length+1];
         return helper(nums,-1,0);
     }
     int helper(int[] nums,int prev,int i){
