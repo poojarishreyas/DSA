@@ -4,9 +4,7 @@ class Solution {
         dp=new int[prices.length+1][3];
 
        
-           for (int i = 0; i <= prices.length; i++) {
-            dp[i][0] = 0;
-        }
+        
         for(int i=prices.length-1;i>=0;i--){
             for(int j=1;j<3;j++){
                 if(j==2){
