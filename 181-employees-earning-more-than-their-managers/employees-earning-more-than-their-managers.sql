@@ -3,4 +3,4 @@ select e.name as Employee
 From Employee e
 Inner join Employee m
 On e.managerId=m.id
-where e.salary>m.salary
+AND e.salary>m.salary
