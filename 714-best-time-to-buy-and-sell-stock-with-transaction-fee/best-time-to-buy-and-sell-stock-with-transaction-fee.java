@@ -1,23 +1,23 @@
 class Solution {
-    int[][]dp;
     public int maxProfit(int[] prices, int fee) {
-        int[] prev=new int [prices.length+1];
-        int[] curr=new int[prices.length+1];
-        for(int i=prices.length-1;i>=0;i--){
-            for(int j=0;j<=1;j++){
-                if(j==0){
-                    curr[j]=Math.max(prev[1]-prices[i],prev[0]);
-                }
-                else{
-                    curr[j]=Math.max(prev[0]+prices[i]-fee,prev[1]);
-                }
 
+        int[] dp = new int[2];
+
+        for (int i = prices.length - 1; i >= 0; i--) {
+
+            // Save previous day's values
+            int old0 = dp[0];
+            int old1 = dp[1];
+
+            if (0 == 0) {
+                dp[0] = Math.max(old1 - prices[i], old0);
             }
-            int[] temp=prev;
-            prev=curr;
-            curr=prev;
+
+            if (1 == 1) {
+                dp[1] = Math.max(old0 + prices[i] - fee, old1);
+            }
         }
-        return prev[0];
+
+        return dp[0];
     }
-    
 }
