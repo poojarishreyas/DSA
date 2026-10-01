@@ -19,7 +19,7 @@ class Solution {
         if(i>=n || j>=m){
             return 0;
         }
-        if(dp[i][j]!=-1) return dp[i][j];
+        if(dp[i][j]!=-1 ) return dp[i][j];
         if(obstacleGrid[i][j]!=0) return dp[i][j] =0;
         int  c1= helper(obstacleGrid,i+1,j);
         int  c2=helper(obstacleGrid,i,j+1);
