@@ -1,6 +1,5 @@
 class Solution {
-    int n;
-    int m;
+    
     public int minFallingPathSum(int[][] matrix) {
          int n=matrix.length;
          int m=matrix[0].length;
