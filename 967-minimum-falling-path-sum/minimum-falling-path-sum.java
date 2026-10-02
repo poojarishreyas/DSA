@@ -28,16 +28,5 @@ class Solution {
          
        
     }
-    public int helper(int[][] matrix,int row, int col){
-        if(  col==m || col<0){
-            return Integer.MAX_VALUE;
-        }
-        if(row==n){
-            return 0;
-        }
-        int c1=helper(matrix,row+1,col);
-        int c2=helper(matrix,row+1,col-1);
-        int c3=helper(matrix,row+1,col+1);
-        return Math.min(c1,Math.min(c2,c3))+matrix[row][col];
-    }
+   
 }
