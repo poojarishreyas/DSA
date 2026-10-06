@@ -20,15 +20,15 @@ class Solution {
         int c=prev[0];
         return word1.length()-c+word2.length()-c;
     }
-    public int helper(String word1,String word2,int i,int j){
-        if(i==word1.length() || j==word2.length()){
-            return 0;
-        }
-        if(word1.charAt(i)==word2.charAt(j)){
-            return 1+helper(word1,word2,i+1,j+1);
-        }
-        int c1=helper(word1,word2,i+1,j);
-        int c2=helper(word1,word2,i,j+1);
-        return Math.max(c1,c2);
-    }
+    // public int helper(String word1,String word2,int i,int j){
+    //     if(i==word1.length() || j==word2.length()){
+    //         return 0;
+    //     }
+    //     if(word1.charAt(i)==word2.charAt(j)){
+    //         return 1+helper(word1,word2,i+1,j+1);
+    //     }
+    //     int c1=helper(word1,word2,i+1,j);
+    //     int c2=helper(word1,word2,i,j+1);
+    //     return Math.max(c1,c2);
+    // }
 }
