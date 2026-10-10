@@ -1,34 +1,38 @@
 class Solution {
-    class node{
-        int row;
-        int ele;
-        int col;
-        node(int r,int e,int col){
-            row=r;
-            ele=e;
-            this.col=col;
-        }
-    }
     public int kthSmallest(int[][] matrix, int k) {
-        PriorityQueue<node> pq=new PriorityQueue<>((a,b)->{
-            return a.ele-b.ele;
-        });
         int n=matrix.length;
-        for(int i=0;i<n;i++){
-            pq.add(new node(i,matrix[i][0],0));
-        }
-        while(k>1){
-
-            node p=pq.poll();
-            if(p.col+1<n){
-                pq.add(new node(p.row,matrix[p.row][p.col+1],p.col+1));
+        int m=matrix[0].length;
+        int low=matrix[0][0];
+        int high=matrix[n-1][m-1];
+        int res=-1;
+        while(low<=high){
+            int guess=low+(high-low)/2;
+            if(func(matrix,guess)>=k){
+                res=guess;
+                high=guess-1;
             }
-            
-            k--;
-
-           
+            else{
+                low=guess+1;
+            }
         }
-        return pq.poll().ele;
+        return res;
 
+    }
+    public int func(int[][] matrix,int guess){
+        int n=matrix.length;
+        int m=matrix[0].length;
+        int row=n-1;
+        int col=0;
+        int count=0;
+        while(row>=0 && col<m){
+            if(matrix[row][col]>guess){
+                row--;
+            }
+            else{
+                count+=row+1;
+                col++;
+            }
+        }
+        return count;
     }
 }
