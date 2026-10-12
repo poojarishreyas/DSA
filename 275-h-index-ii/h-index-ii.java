@@ -3,6 +3,7 @@ class Solution {
         int low=1;
         int high=citations[citations.length-1];
         int res=0;
+        
         while(low<=high){
             int guess=low+(high-low)/2;
             if(check(citations,guess)){
@@ -21,10 +22,11 @@ class Solution {
             if(ele>=guess){
                 count++;
             }
-            if(count>=guess){
+           
+        }
+         if(count>=guess){
                 return true;
             }
-        }
         return false;
     }
 }
