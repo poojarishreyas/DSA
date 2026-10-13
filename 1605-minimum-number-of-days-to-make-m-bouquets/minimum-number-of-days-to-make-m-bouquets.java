@@ -3,7 +3,7 @@ class Solution {
         if(bloomDay.length<(long) m*k){
             return -1;
         }
-        int low=0;
+      
         int max=bloomDay[0];
         int min=max;
         for(int ele:bloomDay){
@@ -11,6 +11,7 @@ class Solution {
             max=Math.max(max,ele);
         }
         int high=max;
+          int low=min;
         int res=-1;
         while(low<=high){
             int guess=low+(high-low)/2;
