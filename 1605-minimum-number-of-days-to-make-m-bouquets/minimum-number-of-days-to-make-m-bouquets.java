@@ -5,7 +5,9 @@ class Solution {
         }
         int low=0;
         int max=bloomDay[0];
+        int min=max;
         for(int ele:bloomDay){
+            min=Math.min(min,ele);
             max=Math.max(max,ele);
         }
         int high=max;
