@@ -5,7 +5,7 @@ class Solution {
         int high=nums.length-1;
         while(mid<=high){
             if(nums[mid]==0){
-                swap(nums,mid,low);
+                swap(nums,low,mid);
                 low++;
                 mid++;
             }
@@ -16,10 +16,11 @@ class Solution {
                 swap(nums,mid,high);
                 high--;
             }
+
         }
-        
+
     }
-    void swap(int[] nums,int i, int j){
+    public void swap(int[] nums, int i,int j){
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
